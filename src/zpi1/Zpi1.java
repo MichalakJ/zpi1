@@ -5,8 +5,13 @@
 package zpi1;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,7 +31,16 @@ public class Zpi1 {
         String fileName = reader.readLine();
         
         System.out.println(validString);
-        //CallBack callBack = new CallBackImpl();
-        //caller.register(callBack);
+        CallBack callBack = new CallBackImpl();
+        caller.register(callBack);
+    }
+    
+    public void writeToFile(String validString, String invalidString, String fileName, CallBack callBack){
+        try {
+            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+            callBack.methodToCall(true);
+        } catch (Exception ex){
+            callBack.methodToCall(false);
+        }
     }
 }

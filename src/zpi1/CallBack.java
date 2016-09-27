@@ -10,4 +10,6 @@ package zpi1;
  */
 public interface CallBack {
     public void methodToCall();
+
+    public void methodToCall(boolean b);
 }
