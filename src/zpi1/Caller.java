@@ -8,6 +8,11 @@ package zpi1;
  *
  * @author student
  */
-public class Caller {
-    
+public class Caller{
+
+    void register(CallBack callBack) {
+        callBack.methodToCall();
+    }
+
+
 }

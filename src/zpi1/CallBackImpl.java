@@ -8,6 +8,11 @@ package zpi1;
  *
  * @author student
  */
-public class CallBackImpl {
+public class CallBackImpl implements CallBack{
+    @Override
+    public void methodToCall() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
     
 }
