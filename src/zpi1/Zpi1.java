@@ -33,9 +33,11 @@ public class Zpi1 {
         System.out.println(validString);
         CallBack callBack = new CallBackImpl();
         caller.register(callBack);
+        writeToFile(validString, invalidString, fileName, callBack);
+        
     }
     
-    public void writeToFile(String validString, String invalidString, String fileName, CallBack callBack){
+    public static void writeToFile(String validString, String invalidString, String fileName, CallBack callBack){
         try {
             PrintWriter writer = new PrintWriter(fileName, "UTF-8");
             callBack.methodToCall(true);
