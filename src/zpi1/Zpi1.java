@@ -5,6 +5,7 @@
 package zpi1;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -32,16 +33,27 @@ public class Zpi1 {
         
         System.out.println(validString);
         CallBack callBack = new CallBackImpl();
-        caller.register(callBack);
         writeToFile(validString, invalidString, fileName, callBack);
-        
+        while(!callBack.getResult()){
+            System.out.println("error "+invalidString);
+            System.out.println("zmien sciezke");
+            fileName = reader.readLine();
+            writeToFile(validString, invalidString, fileName, callBack);
+        }
+        System.out.println("sucess "+ validString);
     }
     
     public static void writeToFile(String validString, String invalidString, String fileName, CallBack callBack){
         try {
-            PrintWriter writer = new PrintWriter(fileName, "UTF-8");
+            File file = new File(fileName);
+            PrintWriter writer = new PrintWriter(file, "UTF-8");
+            writer.print("Hello World");
+            System.out.println("writing to file ..." +fileName);
+            
             callBack.methodToCall(true);
+
         } catch (Exception ex){
+            System.out.println(ex.getMessage());
             callBack.methodToCall(false);
         }
     }
