@@ -47,9 +47,9 @@ public class Zpi1 {
         try {
             File file = new File(fileName);
             PrintWriter writer = new PrintWriter(file, "UTF-8");
-            writer.print("Hello World");
+            writer.println("Hello World");
             System.out.println("writing to file ..." +fileName);
-            
+            writer.close();
             callBack.methodToCall(true);
 
         } catch (Exception ex){
