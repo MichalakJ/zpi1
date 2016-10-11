@@ -9,7 +9,6 @@ package zpi1;
  * @author student
  */
 public interface CallBack {
-    public void methodToCall();
 
     public void methodToCall(boolean b);
     

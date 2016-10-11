@@ -27,8 +27,11 @@ public class Zpi1 {
         Caller caller = new Caller();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         
+        System.out.println("provide valid String");
         String validString = reader.readLine();
+        System.out.println("provide invalid String");
         String invalidString = reader.readLine();
+        System.out.println("provide file name");
         String fileName = reader.readLine();
         
         System.out.println(validString);

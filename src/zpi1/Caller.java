@@ -11,7 +11,7 @@ package zpi1;
 public class Caller{
 
     void register(CallBack callBack) {
-        callBack.methodToCall();
+        callBack.methodToCall(false);
     }
 
 
