@@ -39,11 +39,11 @@ public class Zpi1 {
         writeToFile(validString, invalidString, fileName, callBack);
         while(!callBack.getResult()){
             System.out.println("error "+invalidString);
-            System.out.println("zmien sciezke");
+            System.out.println("change path");
             fileName = reader.readLine();
             writeToFile(validString, invalidString, fileName, callBack);
         }
-        System.out.println("sucess "+ validString);
+        System.out.println("success "+ validString);
     }
     
     public static void writeToFile(String validString, String invalidString, String fileName, CallBack callBack){
@@ -51,7 +51,7 @@ public class Zpi1 {
             File file = new File(fileName);
             PrintWriter writer = new PrintWriter(file, "UTF-8");
             writer.println("Hello World");
-            System.out.println("writing to file ..." +fileName);
+            System.out.println("writing to file ..." + fileName);
             writer.close();
             callBack.methodToCall(true);
 
